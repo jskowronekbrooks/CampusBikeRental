@@ -3,36 +3,29 @@ public class RentalApp {
     public static void main(String[] args) {
         System.out.println("Welcome to the Campus Bike Rental System!");
         
-        // TODO 1: Create two RentalStation objects.
         RentalStation station1 = new RentalStation("North Station");
-        RentalStation station2 = new RentalStation("SouthStation");
+        RentalStation station2 = new RentalStation("South Station");
 
-        // TODO 2: Create at least three Bike objects.
         Bike trek = new Bike(101, "Trek");
         Bike giant = new Bike(102, "Giant");
         Bike offroad = new Bike(103, "Offroad");
 
-        // TODO 3: Rent a bike from the first station.
         station1.rentBike(trek);
 
-        // TODO 4: Attempt to rent the same bike again.
         station1.rentBike(trek);
 
-        // TODO 5: Rent a different bike from the second station.
         station2.rentBike(offroad);
 
-        // TODO 6: Return the first bike and rent it again.
         station2.returnBike(trek);
         station2.rentBike(trek);
 
-        // TODO 7: Print the cost of a three-hour rental.
         double total = RentalStation.calculateCost(3);
         System.out.println();
-        System.out.println("3-hour rental cost: $" + total);
+        System.out.print("3-hour rental cost: ");
+        System.out.printf("$%.2f%n", total); // formats total to two decimal places
 
-        // TODO 8: Print the total successful rentals using
         int rentals = RentalStation.getTotalRentals();
-        System.out.println("Total sucessful rentals: " + rentals);
+        System.out.println("Total successful rentals: " + rentals);
     }
 }
 
@@ -49,7 +42,7 @@ totalRentals. This would be a nightmare to expand dynamically, as you would need
 for every rental station object that you create.
 
 3. When rentBike(Bike bike) is called, is a new Bike object created? Explain.
-Answer: No, this only changes the isAvailable status of the biket that was passed in to rentBike. The
+Answer: No, this only changes the isAvailable status of the bike that was passed in to rentBike. The
 bike object was created earlier, this function only modifies it.
 
 4. Why is HOURLY_RATE declared final?
