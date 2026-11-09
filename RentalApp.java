@@ -40,14 +40,19 @@ public class RentalApp {
 PART D — Written Responses
 
 1. Why is totalRentals static, but name is not?
-Answer:
+Answer: totalRentals tracks the number of rentals that have been made from the RentalStation
+class, but name is specific to each RentalStation. 
 
 2. What would happen if totalRentals were not static?
-Answer:
+Answer: Every time a rental was made, there would need to be a function that updates each instance's
+totalRentals. This would be a nightmare to expand dynamically, as you would need to call this manually
+for every rental station object that you create.
 
 3. When rentBike(Bike bike) is called, is a new Bike object created? Explain.
-Answer:
+Answer: No, this only changes the isAvailable status of the biket that was passed in to rentBike. The
+bike object was created earlier, this function only modifies it.
 
 4. Why is HOURLY_RATE declared final?
-Answer:
+Answer: This is a value that never changes, and never has the need to change. It is constant for every 
+instance of RentalStation.
 */
