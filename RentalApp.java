@@ -4,21 +4,35 @@ public class RentalApp {
         System.out.println("Welcome to the Campus Bike Rental System!");
         
         // TODO 1: Create two RentalStation objects.
+        RentalStation station1 = new RentalStation("North Station");
+        RentalStation station2 = new RentalStation("SouthStation");
 
         // TODO 2: Create at least three Bike objects.
+        Bike trek = new Bike(101, "Trek");
+        Bike giant = new Bike(102, "Giant");
+        Bike offroad = new Bike(103, "Offroad");
 
         // TODO 3: Rent a bike from the first station.
+        station1.rentBike(trek);
 
         // TODO 4: Attempt to rent the same bike again.
+        station1.rentBike(trek);
 
         // TODO 5: Rent a different bike from the second station.
+        station2.rentBike(offroad);
 
         // TODO 6: Return the first bike and rent it again.
+        station2.returnBike(trek);
+        station2.rentBike(trek);
 
         // TODO 7: Print the cost of a three-hour rental.
+        double total = RentalStation.calculateCost(3);
+        System.out.println();
+        System.out.println("3-hour rental cost: $" + total);
 
         // TODO 8: Print the total successful rentals using
-        //         RentalStation.getTotalRentals().
+        int rentals = RentalStation.getTotalRentals();
+        System.out.println("Total sucessful rentals: " + rentals);
     }
 }
 
